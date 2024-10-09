@@ -1,0 +1,7 @@
+<%= @student&.errors&.each do |error| %>
+  <%= turbo_stream.update "#{error.attribute.to_s}_error" do %>
+    <div class="text-danger mt-1">
+      <%= error.full_message %>
+    </div>
+  <% end %>
+<% end %>

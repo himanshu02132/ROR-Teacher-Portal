@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TeacherPortal</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= javascript_pack_tag 'application', 'data-turbo-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', "data-turbo-track": "reload" %>
+    <script src="https://unpkg.com/@hotwired/turbo"></script>
+  </head>
+
+  <body>
+    <div class="container h-100 pt-4">
+      <%= turbo_frame_tag 'flash' do %>
+        <%= render 'layouts/flash' %>
+      <% end %>
+      <%= yield %>
+    </div>
+
+    <%= turbo_frame_tag "modal-window-frame" %>
+  </body>
+</html>

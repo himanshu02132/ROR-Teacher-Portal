@@ -1,0 +1,49 @@
+<div class="card mt-3">
+  <div class="card-body p-2">
+    <div class="no-print pb-2">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <h3>Students</h3>
+        </div>
+        <div class="d-flex align-items-center">
+          <%= link_to home_index_path, class: "btn btn-light mr-4" do %>
+            <i class="mdi mdi-home fs-24"></i> <!-- Home icon -->
+            <span>Home</span>
+          <% end %>
+          <%= link_to destroy_user_session_path, method: :delete, class: "btn btn-light p-0" do %>
+            <i class="mdi mdi-logout fs-24"></i> <!-- Logout icon -->
+            <span>Logout</span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="table-responsive scroller">
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Subject</th>
+              <th>Mark</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id='student-tabel'>
+            <%= render @students %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer text-left">
+    <%= link_to new_student_path, class: "btn btn-primary mr-2", method: :get do %>
+      Add
+    <% end %>
+    <%= link_to new_file_upload_path, class: "btn btn-primary mr-2", method: :get do %>
+      Upload File
+    <% end %>
+    <%= link_to file_upload_path(current_user), class: "btn btn-primary" do %>
+      Show
+    <% end %>
+  </div>
+</div>

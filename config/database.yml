@@ -1,0 +1,10 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: himanshuksi101
+  password: ksolves
+
+development:
+  <<: *default
+  host: localhost
+  database: guesteq-aug-27

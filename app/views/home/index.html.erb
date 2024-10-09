@@ -1,0 +1,18 @@
+<div class="container mt-4">
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <h1 class='text-light'>Welcome, <%= @teacher.email %>!</h1>
+      <p class='text-light'>Here is the overview of your current session.</p>
+
+      <%= link_to destroy_user_session_path, method: :delete, class: "btn btn-light p-1" do %>
+        <i class="mdi mdi-logout fs-24"></i> <!-- Logout icon -->
+        <span>Logout</span>
+      <% end %>
+
+      <!-- Link to the students index page -->
+      <div class="mt-3">
+        <%= link_to 'View Students', students_path, class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+</div>

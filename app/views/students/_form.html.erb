@@ -1,0 +1,45 @@
+<div id="student_form" class="container">
+  <%= form_for(@student, html: { class: "form-horizontal" }) do |form| %>
+    <!-- Name Field -->
+    <div class="mb-3">
+      <%= form.label :name, class: "form-label" %>
+      <div class="input-group">
+        <span class="input-group-text">
+          <i class="mdi mdi-account"></i> <!-- Icon for Name -->
+        </span>
+        <%= form.text_field :name, class: 'form-control', autocomplete: "off", value: @student&.name || '', required: true %>
+      </div>
+      <%= turbo_frame_tag "name_error" %>
+    </div>
+
+    <!-- Subject Name Field -->
+    <div class="mb-3">
+      <%= form.label :subject, class: "form-label" %>
+      <div class="input-group">
+        <span class="input-group-text">
+          <i class="mdi mdi-book"></i> <!-- Icon for Subject Name -->
+        </span>
+        <%= form.text_field :subject_name, class: 'form-control', autocomplete: "off", value: @student&.subject_name || '', required: true %>
+      </div>
+      <%= turbo_frame_tag "subject_name_error" %>
+    </div>
+
+    <!-- Marks Field -->
+    <div class="mb-3">
+      <%= form.label :marks, class: "form-label" %>
+      <div class="input-group">
+        <span class="input-group-text">
+          <i class="mdi mdi-bookmark"></i> <!-- Icon for Marks -->
+        </span>
+        <%= form.text_field :marks, class: 'form-control', autocomplete: "off", value: @student&.marks || '', required: true %>
+      </div>
+      <%= turbo_frame_tag "marks_error" %>
+    </div>
+
+    <!-- Buttons -->
+    <div class="d-flex justify-content-end">
+      <button type="button" class="btn btn-light me-2" data-bs-dismiss="modal">Close</button>
+      <%= form.submit class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,21 @@
+<tr id="file-upload-<%= file_upload.id%>">
+  <td>
+    <div class='d-flex align-items-center'>
+      <!-- Full name -->
+      <div>
+        <%= file_upload.title %>
+      </div>
+    </div>
+  </td>
+  <td>
+      <div">
+        <%= file_upload.description %>
+      </div>
+  </td>
+
+  <td>
+      <div>
+        <%= link_to file_upload.tiny_url, file_upload.tiny_url, target: '_blank', rel: 'noopener' %>
+      </div>
+  </td>
+</tr>

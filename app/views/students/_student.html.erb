@@ -1,0 +1,45 @@
+<tr id="student-<%= student.id%>">
+  <td>
+  <div class='d-flex align-items-center'>
+    <!-- Circle with first letter -->
+    <div class='student-icon'>
+      <%= student.name[0].upcase %>
+    </div>
+    <!-- Full name -->
+    <div>
+      <%= student.name %>
+    </div>
+  </div>
+</td>
+  <td>
+      <div">
+        <%= student.subject_name %>
+      </div>
+  </td>
+
+  <td>
+      <div>
+        <%= student.marks %>
+      </div>
+  </td>
+  <td>
+  <div class="dropdown">
+    <!-- Dropdown Toggle Button -->
+    <i class="mdi mdi-arrow-down-drop-circle fs-4" id="dropdownMenuIcon" data-bs-toggle="dropdown" aria-expanded="false" style="cursor: pointer;"></i>
+
+    <!-- Dropdown Menu -->
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <li>
+        <%= link_to edit_student_path(student), method: :get, class: "dropdown-item" do %>
+          <i class="mdi mdi-square-edit-outline"></i> Edit
+        <% end %>
+      </li>
+      <li>
+        <%= link_to student_path(student), class: "dropdown-item", method: :delete, data: { confirm: 'Are you sure you want to delete this student?' } do %>
+          <i class="mdi mdi-delete"></i> Delete
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</td>
+</tr>

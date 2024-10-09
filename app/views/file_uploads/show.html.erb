@@ -1,0 +1,28 @@
+<div class="card mt-3">
+  <div class="card-body p-2">
+    <div class="no-print pb-2">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <h3>List Of File</h3>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="table-responsive scroller">
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Discription</th>
+              <th>Link</th>
+            </tr>
+          </thead>
+          <tbody id='student-tabel'>
+            <%= render @file_uploads %>
+          </tbody>
+        </table>
+      </div>
+      <%= link_to 'Back', :back, class: 'btn btn-secondary' %> <!-- Back button -->
+    </div>
+  </div>
+</div>

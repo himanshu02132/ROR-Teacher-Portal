@@ -1,0 +1,33 @@
+<div id="file_upload_form" class="container">
+  <%= form_for(@file_upload, html: { class: "form-horizontal" }) do |form| %>
+    <!-- Title Field -->
+    <div class="mb-3">
+      <%= form.label :title, class: "form-label" %>
+      <div class="input-group">
+        <%= form.text_field :title, class: 'form-control', autocomplete: "off" %>
+      </div>
+    </div>
+
+    <!-- Description Field -->
+    <div class="mb-3">
+      <%= form.label :description, class: "form-label" %>
+      <div class="input-group">
+        <%= form.text_field :description, class: 'form-control', autocomplete: "off" %>
+      </div>
+    </div>
+
+    <!-- File Field -->
+    <div class="mb-3">
+      <%= form.label :file, class: "form-label" %>
+      <div class="input-group">
+        <%= form.file_field :file, class: 'form-control', autocomplete: "off" %>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="d-flex justify-content-end">
+      <button type="button" class="btn btn-light me-2" data-bs-dismiss="modal">Close</button>
+      <%= form.submit class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>
